@@ -1,10 +1,9 @@
 # PathoRM
 
-## Resources:
-+ README.md: this file.
+# NOTE:
++ All models in this manuscripts were trained on an NIVIDA 4090 with 24GB of memory. 
 ....
 ....
-
 ## Datasets 
 ### m7GDA
 m7GDA was downloded and curated from m7GHub database,768 associations among 741 m7G sites and 177 diseases.
