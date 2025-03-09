@@ -13,16 +13,16 @@ df = pd.read_excel(excel_file_path)
 column_names = df.columns.tolist()
 # Create an empty dictionary to store embeddings
 
-embeddings_dict = {}
+# embeddings_dict = {}
 
-for index, row in df.iterrows():
-    site_id = row['site_id']
+for index in range(len(column_names)):
+    # site_id = row['site_id']
     site_seq = row['seq']
     inputs = tokenizer(site_seq, return_tensors="pt")
     with torch.no_grad():
         outputs = model(**inputs)    
     embeddings = outputs.last_hidden_state[:, 0, :].numpy()
-    embeddings_dict[site_id] = embeddings
+    # embeddings_dict[site_id] = embeddings
 
 print('embeddings_dict:',embeddings_dict)
 torch.save(embeddings_dict, "/home/amber/mulga/m6a_experiments/extracting_site_semantic_features/rna_embeddings.pt")
